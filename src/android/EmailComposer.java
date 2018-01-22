@@ -130,13 +130,13 @@ public class EmailComposer extends CordovaPlugin {
         cordova.getThreadPool().execute(new Runnable() {
             public void run() {
                 boolean[] available = impl.canSendMail(id, getContext());
-                List<PluginResult> messages = new ArrayList<PluginResult>();
+                // List<PluginResult> messages = new ArrayList<PluginResult>();
 
-                messages.add(new PluginResult(PluginResult.Status.OK, available[0]));
-                messages.add(new PluginResult(PluginResult.Status.OK, available[1]));
+                // messages.add(new PluginResult(PluginResult.Status.OK, available[0]));
+                // messages.add(new PluginResult(PluginResult.Status.OK, available[1]));
 
                 PluginResult result = new PluginResult(
-                        PluginResult.Status.OK, messages);
+                        PluginResult.Status.OK, available[0]);
 
                 command.sendPluginResult(result);
             }
